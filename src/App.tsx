@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ShipmentDetails from './pages/ShipmentDetails'; // Import your ShipmentDetails component
 
-function App() {
+const App: React.FC = () => {
+  const sampleShipment = {
+    id: 1,
+    date: '2023-09-15',
+    from: 'Source City',
+    to: 'Destination City',
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Define the route for the ShipmentDetails page */}
+        <Route
+          path='/shipmentDetails/:shipmentId'
+          element={<ShipmentDetails shipment={sampleShipment} />}
+        />
+        {/* Define the route for the HomePage */}
+        <Route path='/' element={<HomePage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

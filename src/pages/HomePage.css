@@ -1,0 +1,12 @@
+/* HomePage.css */
+.home-page-container {
+  background: linear-gradient(
+    to bottom,
+    #3f72af,
+    #00a2ff
+  ); /* Adjust colors as needed */
+  height: 100vh; /* Set the height to cover the viewport */
+  overflow: auto; /* Enable scrolling if content exceeds viewport */
+  color: white; /* Set text color to white */
+  padding: 20px; /* Add padding as needed */
+}
